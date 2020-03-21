@@ -226,10 +226,6 @@
                 // Grab and display best friend's data from AJAX post
                 $("#matchName").text(data.name);
 				$("#matchImage").attr("src", data.photo);
-				$("#matchImage").css({
-					"max-width" : "150px",
-					"max-height" : "auto"
-				});
                 // Show modal with best match
 				$("#bestFriendModal").modal("toggle");
             });
