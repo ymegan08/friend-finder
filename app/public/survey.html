@@ -165,7 +165,7 @@
             <!-- Modal Content -->
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">x</button>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h3 class="modal-title">Best Match</h1>
                 </div>
                 <div class="modal-body">
@@ -225,7 +225,11 @@
             $.post('/api/friends', newUser, function(data){
                 // Grab and display best friend's data from AJAX post
                 $("#matchName").text(data.name);
-                $("#matchImage").attr("src", data.photo);
+				$("#matchImage").attr("src", data.photo);
+				$("#matchImage").css({
+					"max-width" : "150px",
+					"max-height" : "auto"
+				});
                 // Show modal with best match
 				$("#bestFriendModal").modal("toggle");
             });
