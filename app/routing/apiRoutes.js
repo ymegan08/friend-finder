@@ -11,7 +11,7 @@ module.exports = function(app){
 		console.log(req.body.scores);
 	
 		// Receive user details
-		var userInput = req.body;
+		var user = req.body;
 	
 		// parseInt for scores
 		for(var i = 0; i < user.scores.length; i++) {
@@ -37,7 +37,7 @@ module.exports = function(app){
 		}
 	
 		// Add user to friend array
-		friends.push(userInput);
+		friends.push(user);
 	
 		// send back to browser the best friend match
 		res.json(friends[bestFriendIndex]);
